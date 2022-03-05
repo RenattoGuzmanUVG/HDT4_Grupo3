@@ -4,6 +4,7 @@ import java.util.*;
 public class StackVector<T> extends Stack<T>{
     private Vector miVector;
 
+
     public StackVector() {
         miVector = new Vector<T>();
     }
@@ -12,7 +13,7 @@ public class StackVector<T> extends Stack<T>{
      * Añade un valor a la pila en la primer posición.
      * @param value Valor a agregar.
      */
-
+    @Override
     public void push(T value) {
         miVector.add(0, value);
     }
@@ -21,7 +22,7 @@ public class StackVector<T> extends Stack<T>{
      * Elimina el elemento de la pila en la posición cero.
      * @return El elemento removido
      */
-
+    @Override
     public T pull() {
         return (T) miVector.remove(0);
     }
@@ -39,7 +40,7 @@ public class StackVector<T> extends Stack<T>{
      * Cuenta la cantidad de datos que tiene la pila en ese momento.
      * @return El número de elementos de la pila.
      */
-
+    @Override
     public int count() {
         return miVector.size();
     }
@@ -48,7 +49,7 @@ public class StackVector<T> extends Stack<T>{
      * Verifica si la pila se encuentra vacia.
      * @return True = Vacia, False = Contiene elementos.
      */
-
+    @Override
     public boolean isEmpty() {
         return miVector.isEmpty();
     }
