@@ -112,13 +112,13 @@ public class CalcIInPostFix {
             }
             else if (c == ')'){
                 while (!f.isEmpty() && !f.peek().equals(')')){
-                    resultado += f.pop();
+                    resultado += f.pull();
                 }
                 f.push(c);
             }
             else {
                 while(!f.isEmpty() && Prec(c) <= Prec((Character) f.peek())){
-                    resultado += f.pop();
+                    resultado += f.pull();
                 }
                 f.push(c);
             }
@@ -128,7 +128,7 @@ public class CalcIInPostFix {
             if(f.peek().equals(')')){
                 return "Error";
             }
-            resultado += f.pop();
+            resultado += f.pull();
         }
         return resultado;
     }
