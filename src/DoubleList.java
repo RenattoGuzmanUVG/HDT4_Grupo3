@@ -4,23 +4,33 @@ public class DoubleList<T> extends List<T> {
     private DoubleNode<T> end;
     private int count;
 
-
     public DoubleList() {
         start = null;
         end = null;
         count = 0;
     }
 
+    /**
+     * @return count
+     */
     @Override
     public int count() {
         return count;
     }
 
+    /**
+     * Retorna si está vacío
+     * @return count
+     */
     @Override
     boolean isEmpty() {
         return count == 0;
     }
 
+    /**
+     * Inserta el valor al inicio
+     * @param value
+     */
     @Override
     public void InsertAtStart(T value) {
 
@@ -44,6 +54,10 @@ public class DoubleList<T> extends List<T> {
         count++;
     }
 
+    /**
+     * Inserta el valor al final
+     * @param value
+     */
     @Override
     public void InsertAtEnd(T value) {
         DoubleNode<T> newNode = new DoubleNode<T>(value);
@@ -65,6 +79,11 @@ public class DoubleList<T> extends List<T> {
         count++;
     }
 
+    /**
+     * Inserta el valor en cierto indice
+     * @param value
+     * @param index
+     */
     @Override
     public void Insert(T value, int index) {
         if (isEmpty()) //if the list is empty then insert at start
@@ -99,6 +118,11 @@ public class DoubleList<T> extends List<T> {
         }
     }
 
+    /**
+     * Elimina el valor que se encuentre en cierto indice
+     * @param index
+     * @return
+     */
     @Override
     public T Delete(int index) {
         return null;
@@ -128,11 +152,20 @@ public class DoubleList<T> extends List<T> {
         }
     }
 
+    /**
+     * Elimina el valor del final
+     * @return
+     */
     @Override
     public T DeleteAtEnd() {
         return null;
     }
 
+    /**
+     * Obtiene el valor que esté en cierto indice
+     * @param index
+     * @return
+     */
     @Override
     public T Get(int index) {
 

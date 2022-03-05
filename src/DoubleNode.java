@@ -9,37 +9,37 @@ public class DoubleNode<T> {
     }
 
     /**
-     * @return the value
+     * @return el valor
      */
     public T getValue() {
         return value;
     }
     /**
-     * @param value the value to set
+     * @param value el valor al set
      */
     public void setValue(T value) {
         this.value = value;
     }
     /**
-     * @return the next
+     * @return el siguiente
      */
     public DoubleNode<T> getNext() {
         return next;
     }
     /**
-     * @param next the next to set
+     * @param next el siguiente al set
      */
     public void setNext(DoubleNode<T> next) {
         this.next = next;
     }
     /**
-     * @return the previous
+     * @return el anterior
      */
     public DoubleNode<T> getPrevious() {
         return previous;
     }
     /**
-     * @param previous the previous to set
+     * @param previous el anterior al set
      */
     public void setPrevious(DoubleNode<T> previous) {
         this.previous = previous;
