@@ -1,17 +1,14 @@
 public class StackList<T> extends Stack implements IList<T>{
     @Override
     public void InsertAtStart(T value) {
-
     }
 
     @Override
     public void InsertAtEnd(T value) {
-
     }
 
     @Override
     public void Insert(T value, int index) {
-
     }
 
     @Override
