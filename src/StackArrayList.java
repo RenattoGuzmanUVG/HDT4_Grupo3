@@ -35,6 +35,11 @@ public class StackArrayList<T> extends Stack<T> {
         return miListaInterna.get(0);
     }
 
+    @Override
+    public T pop() {
+        return null;
+    }
+
     /**
      * Cuenta la cantidad de datos que tiene la pila en ese momento.
      * @return El número de elementos de la pila.

@@ -1,5 +1,6 @@
 public class CalcIInPostFix {
-    public int EvaluatePostFixStack(String expresion, Stack<Integer> f) {
+    public int EvaluatePostFixStack(String expresion, Stack f) {
+        expresion = InFixToPosFix(expresion, f);
         int calculo = 0 ;
         String tmpTexto = "";
         boolean isNumeric = false;
@@ -80,5 +81,55 @@ public class CalcIInPostFix {
 
     public int EvaluateInFix(String expresion) {
         return 1;
+    }
+
+    public int Prec(char i){
+        switch (i){
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '^':
+                return 3;
+        }
+        return -1;
+    }
+
+    public String InFixToPosFix(String expresion, Stack f){
+        String resultado = new String ("");
+
+        for (int i = 0; i<expresion.length(); ++i)
+        {
+            char c = expresion.charAt(i);
+
+            if (Character.isLetterOrDigit(c)){
+                resultado += c;
+            }
+            else if (c == '('){
+                f.push(c);
+            }
+            else if (c == ')'){
+                while (!f.isEmpty() && !f.peek().equals(')')){
+                    resultado += f.pop();
+                }
+                f.push(c);
+            }
+            else {
+                while(!f.isEmpty() && Prec(c) <= Prec((Character) f.peek())){
+                    resultado += f.pop();
+                }
+                f.push(c);
+            }
+        }
+
+        while (!f.isEmpty()){
+            if(f.peek().equals(')')){
+                return "Error";
+            }
+            resultado += f.pop();
+        }
+        return resultado;
     }
 }

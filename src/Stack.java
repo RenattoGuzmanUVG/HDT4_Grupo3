@@ -24,4 +24,11 @@ public abstract class Stack<T> extends Factory implements IStack<T>{
     public T peek() {
         return null;
     }
+
+    @Override
+    public T pop() {
+        return null;
+    }
+
+
 }

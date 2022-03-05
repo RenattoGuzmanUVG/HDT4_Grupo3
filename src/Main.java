@@ -59,11 +59,11 @@ public class Main {
         switch (seleccion){
             case 1:
                 f = new StackArrayList();
-                resultado= c.EvaluatePostFixStack(expresion, (Stack<Integer>) f);
+                resultado= c.EvaluatePostFixStack(expresion, (Stack) f);
                 break;
             case 2:
                 f = new StackVector();
-                resultado = c.EvaluatePostFixStack(expresion, (Stack<Integer>) f);
+                resultado = c.EvaluatePostFixStack(expresion, (Stack) f);
                 break;
             case 4:
                 f = new SingleList();
