@@ -1,2 +1,2 @@
-public class StackVector {
+public class StackVector extends Stack{
 }
