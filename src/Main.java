@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,10 +9,10 @@ public class Main {
 
         int seleccion;
         String expresion;
-        int resultado;
+        int resultado = 0;
 
         expresion = l.lector("datos");
-
+        Factory f = null;
         System.out.println("""
                 ██╗███╗░░██╗███████╗██╗██╗░░██╗  ████████╗░█████╗░
                 ██║████╗░██║██╔════╝██║╚██╗██╔╝  ╚══██╔══╝██╔══██╗
@@ -59,25 +58,23 @@ public class Main {
 
         switch (seleccion){
             case 1:
-                StackArrayList a = new StackArrayList();
+                f = new StackArrayList();
+                resultado= c.EvaluatePostFixStack(expresion, (Stack<Integer>) f);
                 break;
             case 2:
-                StackVector v = new StackVector();
+                f = new StackVector();
+                resultado = c.EvaluatePostFixStack(expresion, (Stack<Integer>) f);
                 break;
             case 4:
-                SingleStackList singlel = new SingleStackList();
+                f = new SingleList();
                 break;
             case 5:
-                DoubleStackList doublel = new DoubleStackList();
+                f = new DoubleList();
                 break;
         }
 
-        resultado = c.EvaluateInFix(expresion);
-        resultado = c.EvaluatePostFix(expresion);
-
         System.out.println("Archivo escaneado!");
-        System.out.println("El resultado de evaluar la expresion '" + expresion + "' es: ");
+        System.out.println("El resultado de evaluar la expresion '" + expresion + "' es: "  + resultado);
         System.out.println("Solicitud finalizada con éxito. Finalizando programa...");
-
     }
 }

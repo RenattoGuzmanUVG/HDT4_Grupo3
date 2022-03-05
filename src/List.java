@@ -1,4 +1,4 @@
-public class StackList<T> extends Stack implements IList<T>{
+public abstract class List<T> extends Factory implements IList<T>{
     @Override
     public void InsertAtStart(T value) {
     }
@@ -31,13 +31,4 @@ public class StackList<T> extends Stack implements IList<T>{
         return null;
     }
 
-    @Override
-    public boolean IsEmpty() {
-        return false;
-    }
-
-    @Override
-    public int Count() {
-        return 0;
-    }
 }

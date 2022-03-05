@@ -1,4 +1,5 @@
-public abstract class Stack<T> implements IStack<T>{
+public abstract class Stack<T> extends Factory implements IStack<T>{
+
     @Override
     public int count() {
         return 0;

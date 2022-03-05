@@ -14,7 +14,5 @@ public interface IList<T> {
 
     T Get(int index);
 
-    boolean IsEmpty();
 
-    int Count();
 }

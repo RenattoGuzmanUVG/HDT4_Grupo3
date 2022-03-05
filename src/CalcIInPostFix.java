@@ -1,7 +1,6 @@
 public class CalcIInPostFix {
-    public int EvaluatePostFix(String expresion) {
+    public int EvaluatePostFixStack(String expresion, Stack<Integer> f) {
         int calculo = 0 ;
-        StackArrayList pila = new StackArrayList();
         String tmpTexto = "";
         boolean isNumeric = false;
         int numValido = 0;
@@ -22,25 +21,25 @@ public class CalcIInPostFix {
             // Al verificar que es correcto se insertara en pila
             if (isNumeric){
                 numValido = Integer.parseInt(tmpTexto);
-                pila.push(numValido);
+                f.push(numValido);
             }
             // Se verificara si este es un tipo de operador
             else{
                 if(tmpTexto.equals("+")|| tmpTexto.equals("-")|| tmpTexto.equals("*")|| tmpTexto.equals("/")){
-                    if(pila.count() >=2){
-                        operandoB = (int) pila.pull();
-                        operandoA = (int) pila.pull();
+                    if(f.count() >=2){
+                        operandoB = (int) f.pull();
+                        operandoA = (int) f.pull();
                         if(tmpTexto.equals("+")){
                             Operacion = operandoA + operandoB;
-                            pila.push(Operacion);
+                            f.push(Operacion);
                         }
                         else if(tmpTexto.equals("-")) {
                             Operacion = operandoA - operandoB;
-                            pila.push(Operacion);
+                            f.push(Operacion);
                         }
                         else if(tmpTexto.equals("*")) {
                             Operacion = operandoA * operandoB;
-                            pila.push(Operacion);
+                            f.push(Operacion);
                         }
                         else if(tmpTexto.equals("/")) {
                             if(operandoB == 0){
@@ -50,7 +49,7 @@ public class CalcIInPostFix {
                             }
                             else{
                                 Operacion = operandoA / operandoB;
-                                pila.push(Operacion);
+                                f.push(Operacion);
                             }
                         }
                     }
@@ -68,8 +67,8 @@ public class CalcIInPostFix {
             }
         }
         if(!existeError){
-            if(pila.count() == 1 ){
-                calculo = (int) pila.pull();
+            if(f.count() == 1 ){
+                calculo = (int) f.pull();
                 return calculo;
             }
             else{
