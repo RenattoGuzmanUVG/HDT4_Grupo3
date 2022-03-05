@@ -1,10 +1,16 @@
 import java.util.ArrayList;
 import java.util.*;
 
+/**
+ * Clase que crea los metodos para vector
+ * @param <T> indica que puede ser cualquier tipo de valor
+ */
 public class StackVector<T> extends Stack<T>{
     private Vector miVector;
 
-
+    /**
+     * Constructor de la clase StackVector
+     */
     public StackVector() {
         miVector = new Vector<T>();
     }
