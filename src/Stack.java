@@ -25,10 +25,6 @@ public abstract class Stack<T> extends Factory implements IStack<T>{
         return null;
     }
 
-    @Override
-    public T pop() {
-        return null;
-    }
 
 
 }

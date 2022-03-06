@@ -31,6 +31,7 @@ public class Main {
                 █▀▀ ▄▀█ █░░ █▀▀ █░█ █░░ ▄▀█ ▀█▀ █▀█ █▀█
                 █▄▄ █▀█ █▄▄ █▄▄ █▄█ █▄▄ █▀█ ░█░ █▄█ █▀▄
                 """);
+        System.out.println("La calculadora mas inteligente que sus creadores");
         System.out.println("De acuerdo, démosle una solución a sus problemas...");
         System.out.println("""
                 

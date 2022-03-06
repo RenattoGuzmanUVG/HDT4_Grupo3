@@ -1,7 +1,7 @@
 public class CalcIInPostFix {
     public int EvaluatePostFixStack(String expresion, Stack f) {
-        expresion = InFixToPosFix(expresion, f);
-        int calculo = 0 ;
+        expresion = infixToPostfix(expresion, f);
+        int calculo = 0;
         String tmpTexto = "";
         boolean isNumeric = false;
         int numValido = 0;
@@ -10,7 +10,7 @@ public class CalcIInPostFix {
         int operandoA;
         boolean existeError = false;
         String[] expresionSplit = expresion.split(" ");
-        for (int i = 0; i<expresionSplit.length; i++ ){
+        for (int i = 0; i < expresionSplit.length; i++) {
             tmpTexto = expresionSplit[i];
             // Se verifica que el numero que viene en el texto es correcto
             try {
@@ -20,59 +20,52 @@ public class CalcIInPostFix {
                 isNumeric = false;
             }
             // Al verificar que es correcto se insertara en pila
-            if (isNumeric){
+            if (isNumeric) {
                 numValido = Integer.parseInt(tmpTexto);
                 f.push(numValido);
             }
             // Se verificara si este es un tipo de operador
-            else{
-                if(tmpTexto.equals("+")|| tmpTexto.equals("-")|| tmpTexto.equals("*")|| tmpTexto.equals("/")){
-                    if(f.count() >=2){
+            else {
+                if (tmpTexto.equals("+") || tmpTexto.equals("-") || tmpTexto.equals("*") || tmpTexto.equals("/")) {
+                    if (f.count() >= 2) {
                         operandoB = (int) f.pull();
                         operandoA = (int) f.pull();
-                        if(tmpTexto.equals("+")){
+                        if (tmpTexto.equals("+")) {
                             Operacion = operandoA + operandoB;
                             f.push(Operacion);
-                        }
-                        else if(tmpTexto.equals("-")) {
+                        } else if (tmpTexto.equals("-")) {
                             Operacion = operandoA - operandoB;
                             f.push(Operacion);
-                        }
-                        else if(tmpTexto.equals("*")) {
+                        } else if (tmpTexto.equals("*")) {
                             Operacion = operandoA * operandoB;
                             f.push(Operacion);
-                        }
-                        else if(tmpTexto.equals("/")) {
-                            if(operandoB == 0){
+                        } else if (tmpTexto.equals("/")) {
+                            if (operandoB == 0) {
                                 System.out.println("Error! Division por 0");
                                 existeError = true;
                                 break;
-                            }
-                            else{
+                            } else {
                                 Operacion = operandoA / operandoB;
                                 f.push(Operacion);
                             }
                         }
-                    }
-                    else{
-                        System.out.println("Error! Insufiecientes operandos para realizar la operacion ["+tmpTexto+"]");
+                    } else {
+                        System.out.println("Error! Insufiecientes operandos para realizar la operacion [" + tmpTexto + "]");
                         existeError = true;
                         break;
                     }
-                }
-                else{
-                    System.out.println("Error! Operador invalido ["+tmpTexto+"]");
+                } else {
+                    System.out.println("Error! Operador invalido [" + tmpTexto + "]");
                     existeError = true;
                     break;
                 }
             }
         }
-        if(!existeError){
-            if(f.count() == 1 ){
+        if (!existeError) {
+            if (f.count() == 1) {
                 calculo = (int) f.pull();
                 return calculo;
-            }
-            else{
+            } else {
                 System.out.println("Error! Insuficientes Operadores");
             }
         }
@@ -82,54 +75,70 @@ public class CalcIInPostFix {
     public int EvaluateInFix(String expresion) {
         return 1;
     }
-
-    public int Prec(char i){
-        switch (i){
+    static int Prec(char ch)
+    {
+        switch (ch)
+        {
             case '+':
             case '-':
                 return 1;
+
             case '*':
             case '/':
                 return 2;
+
             case '^':
                 return 3;
         }
         return -1;
     }
 
-    public String InFixToPosFix(String expresion, Stack f){
-        String resultado = new String ("");
 
-        for (int i = 0; i<expresion.length(); ++i)
+    static String infixToPostfix(String exp, Stack<Character> f)
+    {
+        String result = new String("");
+
+        for (int i = 0; i<exp.length(); ++i)
         {
-            char c = expresion.charAt(i);
+            char c = exp.charAt(i);
 
-            if (Character.isLetterOrDigit(c)){
-                resultado += c;
+            if (Character.isLetterOrDigit(c)) {
+                result += c;
+                result += " ";
             }
-            else if (c == '('){
+
+            else if (c == '(')
                 f.push(c);
+
+            else if (c == ')')
+            {
+                while (!f.isEmpty() && f.peek() != '(') {
+                    result += f.pull();
+                    result += " ";
+                }
+
+                f.pull();
             }
-            else if (c == ')'){
-                while (!f.isEmpty() && !f.peek().equals(')')){
-                    resultado += f.pull();
+            else
+            {
+                while (!f.isEmpty() && Prec(c) <= Prec(f.peek())){
+
+                    result += f.pull();
+                    result += " ";
                 }
                 f.push(c);
             }
-            else {
-                while(!f.isEmpty() && Prec(c) <= Prec((Character) f.peek())){
-                    resultado += f.pull();
-                }
-                f.push(c);
-            }
+
         }
 
         while (!f.isEmpty()){
-            if(f.peek().equals(')')){
-                return "Error";
-            }
-            resultado += f.pull();
+            if(f.peek() == '(')
+                return "Invalid Expression";
+            result += f.pull();
+            result += " ";
         }
-        return resultado;
+        System.out.println(result);
+        return result;
     }
+
 }

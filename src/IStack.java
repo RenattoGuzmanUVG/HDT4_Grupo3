@@ -6,5 +6,5 @@ public interface IStack<T> {
 
     T peek();
 
-    T pop();
+
 }
