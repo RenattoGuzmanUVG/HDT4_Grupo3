@@ -1,5 +1,9 @@
 public interface IList<T> {
 
+    int count();
+
+    boolean isEmpty();
+
     void InsertAtStart(T value);
 
     void InsertAtEnd(T value);
@@ -13,6 +17,5 @@ public interface IList<T> {
     T DeleteAtEnd();
 
     T Get(int index);
-
 
 }

@@ -1,4 +1,4 @@
-public class SingleList<T> extends List<T> {
+public class SingleList<T> implements IList<T> {
 
     private int count;
     private Node<T> start;
@@ -14,7 +14,7 @@ public class SingleList<T> extends List<T> {
      * @return count
      */
     @Override
-    int count() {
+    public int count() {
         return 0;
     }
     /**
@@ -22,7 +22,7 @@ public class SingleList<T> extends List<T> {
      * @return count
      */
     @Override
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return count == 0;
     }
 
@@ -253,4 +253,5 @@ public class SingleList<T> extends List<T> {
 
         return null;
     }
+
 }

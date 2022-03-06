@@ -1,4 +1,4 @@
-public class DoubleList<T> extends List<T> {
+public class DoubleList<T> implements IList<T> {
 
     private DoubleNode<T> start;
     private DoubleNode<T> end;
@@ -23,7 +23,7 @@ public class DoubleList<T> extends List<T> {
      * @return count
      */
     @Override
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return count == 0;
     }
 
