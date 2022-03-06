@@ -32,6 +32,7 @@ public class Main {
                 █▄▄ █▀█ █▄▄ █▄▄ █▄█ █▄▄ █▀█ ░█░ █▄█ █▀▄
                 """);
         System.out.println("La calculadora mas inteligente que sus creadores");
+        System.out.println("<<Mi programa es mas inteligente que yo, y yo lo hice>> - Diego,2022");
         System.out.println("De acuerdo, démosle una solución a sus problemas...");
         System.out.println("""
                 

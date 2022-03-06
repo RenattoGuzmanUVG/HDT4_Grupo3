@@ -1,6 +1,6 @@
 public class CalcIInPostFix {
     public int EvaluatePostFixStack(String expresion, Stack f) {
-        expresion = infixToPostfix(expresion, f);
+        expresion = infixToPostfixStack(expresion, f);
         int calculo = 0;
         String tmpTexto = "";
         boolean isNumeric = false;
@@ -94,7 +94,7 @@ public class CalcIInPostFix {
     }
 
 
-    static String infixToPostfix(String exp, Stack<Character> f)
+    static String infixToPostfixStack(String exp, Stack<Character> f)
     {
         String result = new String("");
 
@@ -140,5 +140,53 @@ public class CalcIInPostFix {
         System.out.println(result);
         return result;
     }
+    static String infixToPostfixList(String exp, List<Character> f)
+    {
+        String result = new String("");
 
+        for (int i = 0; i<exp.length(); ++i)
+        {
+            char c = exp.charAt(i);
+
+            if (Character.isLetterOrDigit(c)) {
+                result += c;
+                result += " ";
+            }
+
+            else if (c == '(')
+                f.InsertAtStart(c);
+
+            else if (c == ')')
+            {
+                while (!f.isEmpty() && f.Get(0) != '(') {
+                    result += f.Get(0);
+                    result += " ";
+                    f.DeleteAtStart();
+                }
+
+                f.DeleteAtStart();
+            }
+            else
+            {
+                while (!f.isEmpty() && Prec(c) <= Prec(f.Get(0))){
+
+                    result += f.Get(0);
+                    result += " ";
+                    f.DeleteAtStart();
+                }
+                f.InsertAtStart(c);
+            }
+
+        }
+
+        while (!f.isEmpty()){
+            if(f.Get(0) == '(')
+                return "Invalid Expression";
+            result += f.Get(0);
+            result += " ";
+            f.DeleteAtStart();
+        }
+        System.out.println(result);
+        return result;
+    }
 }
