@@ -23,7 +23,7 @@ public class Lectura {
     /**
      * Método empleado para leer archivos.
      * @param path Direccion en la que se encuentra el archivo
-     * @return Devuelve una variable string que contiene la informacion del archivo. 
+     * @return Devuelve una variable string que contiene la informacion del archivo.
      */
     public String lector(String path){
         String texto="";
