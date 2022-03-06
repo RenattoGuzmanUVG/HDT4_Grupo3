@@ -121,13 +121,17 @@ public class DoubleList<T> extends List<T> {
     /**
      * Elimina el valor que se encuentre en cierto indice
      * @param index
-     * @return
+     * @return null
      */
     @Override
     public T Delete(int index) {
         return null;
     }
 
+    /**
+     * Elimina el valor del inicio
+     * @return null
+     */
     @Override
     public T DeleteAtStart() {
         if (!isEmpty()) {
@@ -154,7 +158,7 @@ public class DoubleList<T> extends List<T> {
 
     /**
      * Elimina el valor del final
-     * @return
+     * @return null
      */
     @Override
     public T DeleteAtEnd() {
@@ -164,7 +168,7 @@ public class DoubleList<T> extends List<T> {
     /**
      * Obtiene el valor que esté en cierto indice
      * @param index
-     * @return
+     * @return null
      */
     @Override
     public T Get(int index) {
