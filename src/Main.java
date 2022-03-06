@@ -68,12 +68,12 @@ public class Main {
                 resultado = c.EvaluatePostFixStack(expresion, (Stack) f);
                 break;
             case 4:
-                f = new SingleList();
-                resultado = c.EvaluateInFix(expresion, (List) f);
+                f = new StackUsingLinkedList();
+                resultado = c.EvaluatePostFixStack(expresion, (Stack) f);
                 break;
             case 5:
-                f = new DoubleList();
-                resultado = c.EvaluateInFix(expresion, (List) f);
+                f = new StackUsingDoubleLinkedList();
+                resultado = c.EvaluatePostFixStack(expresion, (Stack) f);
                 break;
         }
 
