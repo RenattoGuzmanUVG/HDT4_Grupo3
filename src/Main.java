@@ -69,9 +69,11 @@ public class Main {
                 break;
             case 4:
                 f = new SingleList();
+                resultado = c.EvaluateInFix(expresion, (List) f);
                 break;
             case 5:
                 f = new DoubleList();
+                resultado = c.EvaluateInFix(expresion, (List) f);
                 break;
         }
 

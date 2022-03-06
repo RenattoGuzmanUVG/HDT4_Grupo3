@@ -1,6 +1,13 @@
 public class SingleList<T> extends List<T> {
 
+    private int count;
+    private Node<T> start;
+    private Node<T> end;
+
     public SingleList() {
+        start = null;
+        end = null;
+        count = 0;
     }
 
     /**
@@ -18,10 +25,6 @@ public class SingleList<T> extends List<T> {
     boolean isEmpty() {
         return count == 0;
     }
-
-    private int count;
-    private Node<T> start;
-    private Node<T> end;
 
     /**
      * Inserta el valor al inicio
@@ -107,6 +110,7 @@ public class SingleList<T> extends List<T> {
             }
         }
     }
+
     /**
      * Elimina el valor que se encuentre en cierto indice
      * @param index
