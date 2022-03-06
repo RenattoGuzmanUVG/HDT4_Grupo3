@@ -72,7 +72,7 @@ public class StackVector<T> extends Stack<T>{
 
     /**
      * Verifica si la pila se encuentra vacia.
-     * @return True = Vacia, False = Contiene elementos.
+     * @return True = Vania, False = Contiene elementos.
      */
     @Override
     public boolean isEmpty() {
