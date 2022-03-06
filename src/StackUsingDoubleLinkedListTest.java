@@ -1,28 +1,22 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Vector;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class StackVectorTest {
-
-
+class StackUsingDoubleLinkedListTest {
 
     @Test
     void push() {
-
-        StackVector<Integer> Stack = new StackVector<Integer>();
+        StackUsingDoubleLinkedList<Integer> Stack = new StackUsingDoubleLinkedList<>();
         Stack.push(4);
         Stack.push(5);
         Stack.push(6);
 
         assertEquals(6, Stack.peek());
-
     }
 
     @Test
     void pull() {
-        StackVector<Integer> Stack = new StackVector<Integer>();
+        StackUsingDoubleLinkedList<Integer> Stack = new StackUsingDoubleLinkedList<>();
         Stack.push(4);
         Stack.push(5);
         Stack.push(6);
@@ -33,7 +27,7 @@ class StackVectorTest {
 
     @Test
     void peek() {
-        StackVector<Integer> Stack = new StackVector<Integer>();
+        StackUsingDoubleLinkedList<Integer> Stack = new StackUsingDoubleLinkedList<>();
         Stack.push(4);
         Stack.push(5);
         Stack.push(6);
@@ -41,9 +35,10 @@ class StackVectorTest {
         assertEquals(6, Stack.peek());
     }
 
+
     @Test
     void count() {
-        StackVector<Integer> Stack = new StackVector<Integer>();
+        StackUsingDoubleLinkedList<Integer> Stack = new StackUsingDoubleLinkedList<>();
         Stack.push(4);
         Stack.push(5);
         Stack.push(6);
@@ -53,7 +48,7 @@ class StackVectorTest {
 
     @Test
     void isEmpty() {
-        StackVector<Integer> Stack = new StackVector<Integer>();
+        StackUsingDoubleLinkedList<Integer> Stack = new StackUsingDoubleLinkedList<>();
         Stack.push(4);
         Stack.push(5);
         Stack.push(6);
