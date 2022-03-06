@@ -1,9 +1,33 @@
+/**Universidad del Valle de Guatemala
+ * Facultad de Ingeniería
+ * Departamento de Ciencia de la Computación.
+ * Algoritmos y Estructuras de datos.
+ * Sección: 20
+ *
+ * Hoja de Trabajo #4
+ *
+ * Entorno: El ejercicio tiene como objetivo, traducir del formato Infix to Postfix y devolver el resultado de la operación.
+ * Clase: StackUsingDoubleLinkedList
+ * Proposito: implementa Stack en DoubleList
+ *
+ * @version 1.0
+ * @author Diego Alexander Hernández Silvestre
+ * @author Renatto Esteban Guzman Sosa
+ * @author Adrian Fulladolsa Palma
+ * @author David Jonathan Aragon Vasquez
+ */
+
+
 public class SingleList<T> implements IList<T> {
 
     private int count;
     private Node<T> start;
     private Node<T> end;
 
+    /**
+     * Inserta el valor al inicio
+     * @param value
+     */
     @Override
     public void InsertAtStart(T value) {
         Node<T> newNode = new Node<T>(value);
@@ -21,6 +45,10 @@ public class SingleList<T> implements IList<T> {
         count++;
     }
 
+    /**
+     * Inserta el valor al final
+     * @param value
+     */
     @Override
     public void InsertAtEnd(T value) {
         Node<T> newNode = new Node<T>(value);
@@ -39,6 +67,11 @@ public class SingleList<T> implements IList<T> {
 
     }
 
+    /**
+     * Inserta el valor en cierto indice
+     * @param value
+     * @param index
+     */
     @Override
     public void Insert(T value, int index){
 
@@ -78,6 +111,11 @@ public class SingleList<T> implements IList<T> {
         }
     }
 
+    /**
+     * Elimina el valor que se encuentre en cierto indice
+     * @param index
+     * @return null
+     */
     @Override
     public T Delete(int index) {
 
@@ -114,6 +152,10 @@ public class SingleList<T> implements IList<T> {
         }
     }
 
+    /**
+     * Elimina el valor del inicio
+     * @return null
+     */
     @Override
     public T DeleteAtStart() {
 
@@ -128,6 +170,10 @@ public class SingleList<T> implements IList<T> {
         return null;
     }
 
+    /**
+     * Elimina el valor del final
+     * @return null
+     */
     @Override
     public T DeleteAtEnd() {
         if (!isEmpty())
@@ -165,6 +211,11 @@ public class SingleList<T> implements IList<T> {
         return null;
     }
 
+    /**
+     * Obtiene el valor que esté en cierto indice
+     * @param index
+     * @return null
+     */
     @Override
     public T Get(int index) {
 
@@ -206,11 +257,18 @@ public class SingleList<T> implements IList<T> {
         return null;
     }
 
+    /**
+     * Retorna si está vacío
+     * @return count
+     */
     @Override
     public boolean isEmpty() {
         return count == 0;
     }
 
+    /**
+     * @return count
+     */
     @Override
     public int count() {
         // TODO Auto-generated method stub
