@@ -1,4 +1,28 @@
+/**Universidad del Valle de Guatemala
+ * Facultad de Ingeniería
+ * Departamento de Ciencia de la Computación.
+ * Algoritmos y Estructuras de datos.
+ * Sección: 20
+ *
+ * Hoja de Trabajo #4
+ *
+ * Entorno: El ejercicio tiene como objetivo, traducir del formato Infix to Postfix y devolver el resultado de la operación.
+ * Clase: CalIInPostFix
+ * Proposito: Realizar traduccion de InFix a PosFix y calculos necesarios con expresion PosFix
+ *
+ * @version 1.0
+ * @author Diego Alexander Hernández Silvestre
+ * @author Renatto Esteban Guzman Sosa
+ * @author Adrian Fulladolsa Palma
+ * @author David Jonathan Aragon Vasquez
+ */
 public class CalcIInPostFix {
+
+    /**
+     * @param expresion String con la expresion InFix que sera pasada por la calculadora
+     * @param f objeto tipo Stack que sera utilizado para realizar el algoritmo de traduccion de InFix a PosFix y calculos con PosFix
+     * @return int con resultado de calculos
+     */
     public int EvaluatePostFixStack(String expresion, Stack f) {
         expresion = infixToPostfixStack(expresion, f);
         int calculo = 0;
@@ -73,6 +97,10 @@ public class CalcIInPostFix {
     }
 
 
+    /**
+     * @param ch objeto de tipo caracter que representa un operando
+     * @return un int que representa el tipo de caracter que es, buscando el tipo de operando a utilizar en los calculos
+     */
     static int Prec(char ch) {
         switch (ch) {
             case '+':
@@ -90,6 +118,11 @@ public class CalcIInPostFix {
     }
 
 
+    /**
+     * @param exp String con expresion InFix que sera traducida
+     * @param f Objeto de tipo Stack que sera utilizado para realizar traduccion
+     * @return String con expresion en formato PosFix
+     */
     static String infixToPostfixStack(String exp, Stack<Character> f) {
         String result = new String("");
 
