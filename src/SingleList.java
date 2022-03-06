@@ -26,7 +26,7 @@ public class SingleList<T> implements IList<T> {
 
     /**
      * Inserta el valor al inicio
-     * @param value
+     * @param value Valor que se insertara al inicio
      */
     @Override
     public void InsertAtStart(T value) {
@@ -47,7 +47,7 @@ public class SingleList<T> implements IList<T> {
 
     /**
      * Inserta el valor al final
-     * @param value
+     * @param value Valor que se insertara al final
      */
     @Override
     public void InsertAtEnd(T value) {
@@ -69,8 +69,8 @@ public class SingleList<T> implements IList<T> {
 
     /**
      * Inserta el valor en cierto indice
-     * @param value
-     * @param index
+     * @param value Valor a insertar.
+     * @param index Indice en el que se insertara el valor.
      */
     @Override
     public void Insert(T value, int index){
@@ -113,8 +113,8 @@ public class SingleList<T> implements IList<T> {
 
     /**
      * Elimina el valor que se encuentre en cierto indice
-     * @param index
-     * @return null
+     * @param index Valor del indice a eliminar.
+     * @return valor temporal o null
      */
     @Override
     public T Delete(int index) {
@@ -213,8 +213,8 @@ public class SingleList<T> implements IList<T> {
 
     /**
      * Obtiene el valor que esté en cierto indice
-     * @param index
-     * @return null
+     * @param index Número de indice del cual, se obtendra el valor.
+     * @return valor a obtener.
      */
     @Override
     public T Get(int index) {
