@@ -1,7 +1,27 @@
 import java.util.Scanner;
 
+/**Universidad del Valle de Guatemala
+ * Facultad de Ingenieria
+ * Departamento de Ciencia de la Computacion.
+ * Algoritmos y Estructuras de datos.
+ * Sección: 20
+ *
+ * Hoja de Trabajo #4
+ *
+ * Entorno: El ejercicio tiene como objetivo, traducir del formato Infix to Postfix y devolver el resultado de la operacion.
+ *
+ * @version 1.0
+ * @author Diego Alexander Hernández Silvestre
+ * @author Renatto Esteban Guzman Sosa
+ * @author Adrian Fulladolsa Palma
+ * @author David Jonathan Aragon Vasquez
+ */
 public class Main {
 
+    /**
+     * Método utilizado para mostrar la informacion e interactuar con el usuario.
+     * @param args Parámetro requerido
+     */
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Lectura l = new Lectura();

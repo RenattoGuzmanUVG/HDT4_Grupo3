@@ -1,14 +1,38 @@
+/**Universidad del Valle de Guatemala
+ * Facultad de Ingeniería
+ * Departamento de Ciencia de la Computación.
+ * Algoritmos y Estructuras de datos.
+ * Sección: 20
+ *
+ * Hoja de Trabajo #4
+ *
+ * Entorno: El ejercicio tiene como objetivo, traducir del formato Infix to Postfix y devolver el resultado de la operación.
+ *
+ * Clase: DoubleNode
+ * Proposito: Clase encargada de generar los nodos para que se desarrolle un encadenamiento doble.
+ *
+ * @version 1.0
+ * @author Diego Alexander Hernandez Silvestre
+ * @author Renatto Esteban Guzman Sosa
+ * @author Adrian Fulladolsa Palma
+ * @author David Jonathan Aragon Vasquez
+ */
 public class DoubleNode<T> {
 
     private T value;
     private DoubleNode<T> next;
     private DoubleNode<T> previous;
 
+    /**
+     * Constructor de la clase.
+     * @param value Valor a ingresar.
+     */
     public DoubleNode(T value) {
         this.setValue(value);
     }
 
     /**
+     * Obtiene el valor solicitado.
      * @return el valor
      */
     public T getValue() {
