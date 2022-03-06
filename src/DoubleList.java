@@ -1,3 +1,21 @@
+/**Universidad del Valle de Guatemala
+ * Facultad de Ingeniería
+ * Departamento de Ciencia de la Computación.
+ * Algoritmos y Estructuras de datos.
+ * Sección: 20
+ *
+ * Hoja de Trabajo #4
+ *
+ * Entorno: El ejercicio tiene como objetivo, traducir del formato Infix to Postfix y devolver el resultado de la operación.
+ * Clase: DoubleList
+ * Proposito: Clase que utiliza estructura de lista doblemente encadenada, sera utilizada para crear la clase StackUsingDoubleList
+ *
+ * @version 1.0
+ * @author Diego Alexander Hernández Silvestre
+ * @author Renatto Esteban Guzman Sosa
+ * @author Adrian Fulladolsa Palma
+ * @author David Jonathan Aragon Vasquez
+ */
 public class DoubleList<T> implements IList<T> {
 
     private DoubleNode<T> start;
